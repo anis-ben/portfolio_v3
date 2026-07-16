@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #38bdf8;
+  --color-primary-dark: #0284c7;
+  --font-sans: var(--font-geist-sans), Inter, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), Courier, monospace;
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(226, 232, 240, 0.8);
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  
+  --accent: #0284c7;
+  --accent-glow: rgba(2, 132, 199, 0.15);
+  --accent-rgb: 2, 132, 199;
+  
+  --text-muted: #475569;
+}
+
+.dark {
+  --background: #030712;
+  --foreground: #f3f4f6;
+  
+  --card-bg: rgba(11, 15, 25, 0.65);
+  --card-border: rgba(31, 41, 55, 0.6);
+  --input-bg: #111827;
+  --input-border: #374151;
+  
+  --accent: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.2);
+  --accent-rgb: 56, 189, 248;
+  
+  --text-muted: #9ca3af;
+}
+
+/* Base configuration — applies immediately via CSS variables */
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Premium Layout Utilities */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+}
+
+.neon-glow-text {
+  text-shadow: 0 0 10px rgba(var(--accent-rgb), 0.5), 0 0 20px rgba(var(--accent-rgb), 0.2);
+}
+
+.neon-border {
+  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.05);
+  transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+  box-shadow: 0 0 25px rgba(var(--accent-rgb), 0.2);
+  border-color: var(--accent);
+}
+
+/* Cyber grid background decoration */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(var(--accent-rgb), 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--accent-rgb), 0.03) 1px, transparent 1px);
+}
+
+.dark .cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(var(--accent-rgb), 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--accent-rgb), 0.05) 1px, transparent 1px);
+}
+
+/* Selection highlight */
+::selection {
+  background-color: var(--accent-glow);
+  color: var(--accent);
+}
+
+/* Shimmer Animation for loading placeholders */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-placeholder {
+  background: linear-gradient(90deg, var(--card-bg) 25%, var(--card-border) 50%, var(--card-bg) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
