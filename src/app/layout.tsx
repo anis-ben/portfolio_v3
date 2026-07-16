@@ -19,10 +19,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Ben H. Portfolio",
-    default: "Ben H. | Elite Full-Stack Developer Portfolio",
+    template: "%s | Anis Portfolio",
+    default: "Anis | Digital Product Designer & Developer",
   },
-  description: "Modern, cyber-minimalist portfolio website of Ben H. showcasing elite web development and design skills.",
+  description: "Modern, cyber-minimalist portfolio website of Anis showcasing digital product design and web development skills.",
   metadataBase: new URL("http://localhost:3000"),
   robots: {
     index: true,

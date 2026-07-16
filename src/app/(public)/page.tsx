@@ -77,7 +77,7 @@ export default function HomePage() {
     // Trigger download of placeholder CV
     const link = document.createElement("a");
     link.href = "/cv.pdf";
-    link.download = "Ben_H_CV.pdf";
+    link.download = "Anis_Benhamida_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -130,11 +130,11 @@ export default function HomePage() {
           >
             {locale === "en" ? (
               <>
-                Elite <span className="text-sky-500 neon-glow-text">Full-Stack</span> Developer
+                Digital Product <span className="text-sky-500 neon-glow-text">Designer</span> & Developer
               </>
             ) : (
               <>
-                مطور ويب <span className="text-sky-500 neon-glow-text">متكامل</span> محترف
+                مطور و <span className="text-sky-500 neon-glow-text">مصمم</span> منتجات رقمية
               </>
             )}
           </motion.h1>
@@ -429,7 +429,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <span className="block text-[10px] text-slate-400">EMAIL_ADDRESS</span>
-                      <a href="mailto:ben@domain.com" className="text-slate-700 dark:text-slate-200 hover:text-sky-500">ben@domain.com</a>
+                      <a href={`mailto:${t("contactEmailValue")}`} className="text-slate-700 dark:text-slate-200 hover:text-sky-500">{t("contactEmailValue")}</a>
                     </div>
                   </div>
 
@@ -439,7 +439,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <span className="block text-[10px] text-slate-400">TELEPHONE_NO</span>
-                      <a href="tel:+123456789" className="text-slate-700 dark:text-slate-200 hover:text-sky-500">+123 456 789</a>
+                      <a href={t("contactPhoneHref")} className="text-slate-700 dark:text-slate-200 hover:text-sky-500">{t("contactPhoneValue")}</a>
                     </div>
                   </div>
 
@@ -449,7 +449,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <span className="block text-[10px] text-slate-400">CURRENT_LOC</span>
-                      <span className="text-slate-700 dark:text-slate-200">London, United Kingdom</span>
+                      <span className="text-slate-700 dark:text-slate-200">{t("contactLocationValue")}</span>
                     </div>
                   </div>
                 </div>
